@@ -28,7 +28,7 @@ export default function Home() {
 
       {!showIntro && (
         <div>
-          <div className="bg-gradient-to-b from-[#F1EBFF] to-[#FFFFFF]">
+          <div className="bg-linear-to-b from-[#F1EBFF] to-[#FFFFFF]">
             <Navbar />
             <HeroSection2 />
           </div>
