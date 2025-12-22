@@ -61,7 +61,7 @@ function SessionSchedule() {
           </div>
 
           <div className="flex justify-center">
-            <button className="flex items-center gap-3 px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-lg text-white bg-linear-to-b from-[#7E43FF] to-[#4C2899] text-sm sm:text-base md:text-lg">
+            <button className="flex items-center gap-3 px-4 sm:px-6 md:px-8 py-3 sm:py-3 rounded-lg text-white bg-linear-to-b from-[#7E43FF] to-[#4C2899] text-sm sm:text-base md:text-base">
               Schedule a Strategy Session
               <ArrowRight className="w-4 sm:w-5 md:w-5" />
             </button>

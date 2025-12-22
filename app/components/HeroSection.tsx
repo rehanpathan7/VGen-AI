@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import React from "react";
 
+
 function HeroSection() {
   return (
     <div className="mt-20 pl-30">

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { funnelDisplay } from "../fonts/font";
 
 export default function Intro() {
   return (
@@ -10,7 +11,7 @@ export default function Intro() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ delay: 2, duration: 1 }}  // both fade out at the end
-      className="fixed inset-0 flex justify-center items-center bg-white z-50"
+      className={`fixed inset-0 flex justify-center items-center bg-[#FFFFFF] z-50 ${funnelDisplay.className}`}
     >
       <div className="flex flex-col items-center gap-10">
 

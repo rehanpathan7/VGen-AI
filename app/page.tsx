@@ -12,7 +12,8 @@ import Impact from "./components/Impact";
 import VGenFramework from "./components/VGenFramework";
 import SessionSchedule from "./components/SessionSchedule";
 import Footer from "./components/Footer";
-// …other imports
+import {funnelDisplay} from "./fonts/font"
+// app/layout.tsx or app/page.tsx
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -27,10 +28,10 @@ export default function Home() {
       {showIntro && <Intro />}
 
       {!showIntro && (
-        <div>
+        <div className={`text-[#161616 ${funnelDisplay.className}]`} >
           <div className="bg-linear-to-b from-[#F1EBFF] to-[#FFFFFF]">
-            <Navbar />
-            <HeroSection2 />
+            <Navbar />   {/* Perfectly Done, Pixel Perfect */}
+            <HeroSection2 /> {/* Perfectly Done, Pixel Perfect */}
           </div>
           <ExpertStrategy />
           <Features />
