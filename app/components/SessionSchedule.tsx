@@ -2,12 +2,13 @@
 
 import { ArrowRight } from "lucide-react";
 import React, { useState } from "react";
+import { funnelDisplay, instrumentSans } from "../fonts/font";
 
 function SessionSchedule() {
   const [hovering, setHovering] = useState(false);
 
   return (
-    <div className="flex justify-center items-center text-center mt-10 px-4 sm:px-6 lg:px-32">
+    <div className={`flex justify-center items-center text-center mt-10 px-4 mb-20 sm:px-6 lg:px-32 ${funnelDisplay.className}`}>
       <div
         className="relative border-[1.51px] flex justify-center rounded-xl items-center min-h-[46vh] text-center w-full max-w-[1200px] border-[#DCDCDC] p-6 sm:p-12 md:p-20 overflow-hidden"
         onMouseEnter={() => setHovering(true)}
@@ -32,7 +33,7 @@ function SessionSchedule() {
         <div className="relative z-10 flex flex-col max-w-[100%] md:max-w-[100%] gap-6 sm:gap-8 md:gap-10">
           <div className="flex flex-col gap-4 sm:gap-5 md:gap-5">
             <h1
-              className={`flex justify-center text-[#391E73] items-center text-xl sm:text-5xl md:text-3xl lg:text-5xl xl:text-7xl font-semibold ${
+              className={`flex justify-center text-[#391E73] items-center text-lg sm:text-5xl md:text-3xl lg:text-5xl xl:text-7xl font-semibold ${
                 hovering ? "gap-4 sm:gap-5 md:gap-5" : "gap-1 sm:gap-3 md:gap-2"
               }`}
             >
@@ -51,7 +52,7 @@ function SessionSchedule() {
               <span>Accelerate?</span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl">
+            <p className={`text-xs sm:text-lg text-[#3C3154] md:text-xl ${instrumentSans.className}`}>
               Stop building from scratch. Start building with a partner.
               <span className="block">
                 Partner with Vithi IT to deploy a secure, scalable AI workforce
@@ -61,7 +62,7 @@ function SessionSchedule() {
           </div>
 
           <div className="flex justify-center">
-            <button className="flex items-center gap-3 px-4 sm:px-6 md:px-8 py-3 sm:py-3 rounded-lg text-white bg-linear-to-b from-[#7E43FF] to-[#4C2899] text-sm sm:text-base md:text-base">
+            <button className="flex items-center gap-3 px-4 sm:px-6 md:px-8 py-3 sm:py-3 rounded-lg hover:bg-[#4C2899] text-white bg-linear-to-b from-[#7E43FF] to-[#4C2899] text-[10px] sm:text-base md:text-base">
               Schedule a Strategy Session
               <ArrowRight className="w-4 sm:w-5 md:w-5" />
             </button>

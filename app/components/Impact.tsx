@@ -1,5 +1,6 @@
 import React from "react";
 import Accordian from "./Accordian";
+import { funnelDisplay } from "../fonts/font";
 
 const AccordianInfo = [
   {
@@ -30,7 +31,7 @@ const AccordianInfo = [
         "We architected an internal HR intelligence Agent connected to the company's SharePoint and payroll systems.",
       table: [
         { title: "Instant Answers", info: '"What is the policy for remote work in California?" answered instantly in citations.' },
-        { title: "Actionable", info: "Download my last 3 paystubs executed securely via API integration." },
+        { title: "Actionable", info: '"Download my last 3 paystubs" executed securely via API integration.' },
       ],
     },
     result: "Deflected 70% of Tier-1 HR tickets, allowing the team to focus on culture and retention.",
@@ -53,19 +54,19 @@ const AccordianInfo = [
 
 function Impact() {
   return (
-    <div className="flex flex-col px-4 sm:px-10 lg:px-30">
+    <div className="flex flex-col xl:mb-25 sm:px-10 lg:px-32">
       {/* Header */}
-      <div className="flex flex-col items-center text-center mt-10 sm:mt-16 gap-4">
-        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-semibold">
+      <div className={`flex px-4 flex-col items-center text-center mt-10 sm:mt-16 gap-4 ${funnelDisplay.className}`}>
+        <h1 className="text-3xl sm:text-4xl lg:text-7xl font-semibold xl:leading-20">
           Proven Impact <span className="block">Across the Enterprise</span>
         </h1>
-        <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-2xl">
+        <p className="text-base sm:text-lg lg:text-xl max-w-3xl">
           See how we architect specific agents to solve critical business bottlenecks.
         </p>
       </div>
 
       {/* Accordion */}
-      <div className="mt-10">
+      <div className="">
         <Accordian items={AccordianInfo} />
       </div>
     </div>

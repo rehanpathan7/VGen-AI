@@ -23,6 +23,7 @@ body {
   background: #ffffff;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  color: #161616;
 }
 
 .bg-dots {

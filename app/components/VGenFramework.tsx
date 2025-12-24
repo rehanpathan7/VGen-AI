@@ -1,4 +1,5 @@
 import React from "react";
+import { funnelDisplay } from "../fonts/font";
 
 const timelineData = [
   {
@@ -29,68 +30,72 @@ const timelineData = [
 
 export default function VGenFramework() {
   return (
-    <section className="w-full bg-white py-24 flex justify-center">
+    <section className={`w-full bg-white py-24 flex justify-center ${funnelDisplay.className}`}>
       <div className="max-w-6xl w-full px-6">
 
         {/* Heading */}
-        <div className="text-center mb-28">
-          <h1 className="text-2xl sm:text-[56px] leading-[1.1] font-bold text-black">
+        <div className="text-center ">
+          <h1 className="text-2xl sm:text-7xl leading-[1.1] font-bold text-black">
             The VGen Acceleration <br />
             <span className="text-[#7E43FF]">Framework™</span>
           </h1>
-          <p className="mt-6 text-[16px] text-[#4B4B4B]">
+          <p className="mt-2 sm:mt-6 text-sm sm:text-base md:text-xl text-[#4B4B4B]">
             Our proven methodology de-risks deployment and ensures rapid time-to-value.
           </p>
         </div>
 
         {/* Timeline */}
-        <div className="relative">
+        <div className="relative mt-10">
           {/* Vertical line */}
-          <div className="absolute left-1/2 -top-10 -bottom-10 -translate-x-1/2 w-px bg-[#7E43FF]/40" />
+          <div className="absolute left-1/2 -top-8 -bottom-10 -translate-x-1/2 w-px 
+  bg-gradient-to-b 
+  from-transparent 
+  via-[#7E43FF]/60 
+  to-transparent" />
 
           {timelineData.map((item, index) => (
             <div
               key={index}
-              className="grid grid-cols-[1fr_13px_1fr] items-center mb-24"
+              className="grid grid-cols-[1fr_13px_1fr] items-center md:mb-24"
             >
               {/* LEFT SIDE (week + line OR text) */}
               {item.side === "left" ? (
                 <div className="flex justify-end items-center">
-                  <span className="px-5 py-2 rounded-full border border-[#7E43FF] text-[#7E43FF] text-lg font-semibold">
+                  <span className="px-5 py-2 rounded-full border border-[#7E43FF] text-[#7E43FF] text-sm sm:text-base md:text-lg font-semibold">
                     {item.week}
                   </span>
                   <div className="h-px w-12 bg-[#7E43FF]/40" />
                 </div>
               ) : (
-                <div className="text-right px-3 sm:px-7">
-                  <h3 className="text-lg sm:text-2xl font-semibold text-[#7E43FF] mb-2">
+                <div className="text-right md:mt-[5vh] xl:mt-[7vh] px-3 sm:px-7">
+                  <h3 className="text-base md:text-2xl font-semibold text-[#7E43FF] mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-base sm:text-xl max-w-full text-[#4B4B4B] ">
+                  <p className="text-sm sm:text-xl max-w-full text-[#4B4B4B] ">
                     {item.desc}
                   </p>
                 </div>
               )}
 
               {/* CENTER DOT */}
-              <div className="inline-flex justify-center">
+              <div className="inline-flex justify-center items-center">
                 <span className="w-3 h-3 rounded-full bg-[#7E43FF]" />
               </div>
 
               {/* RIGHT SIDE */}
               {item.side === "right" ? (
-                <div className="flex items-center">
+                <div className="flex justify-start items-center">
                   <div className="h-px w-12 bg-[#7E43FF]/40" />
-                  <span className="px-5 py-2 rounded-full border border-[#7E43FF] text-[#7E43FF] text-lg font-semibold">
+                  <span className="px-5 py-2 rounded-full border border-[#7E43FF] text-[#7E43FF] text-sm sm:text-base md:text-lg font-semibold">
                     {item.week}
                   </span>
                 </div>
               ) : (
-                <div className="text-left px-4 sm:px-8">
-                  <h3 className="text-lg sm:text-2xl font-semibold text-[#7E43FF] mb-2">
+                <div className="text-left flex flex-col xl:mt-[10vh] max-w-md px-4 sm:px-10">
+                  <h3 className="text-base sm:text-2xl font-semibold text-[#7E43FF] mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-base sm:text-xl max-w-full text-[#4B4B4B]">
+                  <p className="text-sm  sm:text-xl max-w-full text-[#4B4B4B]">
                     {item.desc}
                   </p>
                 </div>

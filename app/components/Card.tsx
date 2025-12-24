@@ -1,4 +1,5 @@
 import React from "react";
+import { instrumentSans } from "../fonts/font";
 
 interface IconType {
   icon: string | undefined; // Blob removed; img src expects string
@@ -8,7 +9,7 @@ interface IconType {
 
 function Card({ icon, heading, description }: IconType) {
   return (
-    <div className="flex flex-col sm:flex-row bg-gradient-to-b from-[#FFFFFF] to-[#F2ECFF] px-6 sm:px-8 py-6 sm:py-7 rounded-2xl border-[1.5px] border-[#D7C5FF] items-center gap-4 sm:gap-6">
+    <div className="flex flex-col md:flex-row bg-gradient-to-b   from-[#FFFFFF] to-[#F2ECFF] px-6 sm:px-8 py-6 sm:py-7 rounded-2xl border-[1.5px] border-[#D7C5FF] items-center gap-4 sm:gap-6">
       
       {/* Icon */}
       <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
@@ -24,8 +25,8 @@ function Card({ icon, heading, description }: IconType) {
 
       {/* Text */}
       <div className="text-center sm:text-left">
-        <h2 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">{heading}</h2>
-        <p className="text-sm sm:text-base text-gray-600">{description}</p>
+        <h2 className="text-base sm:text-xl font-semibold mb-1 sm:mb-2">{heading}</h2>
+        <p className={`text-xs sm:text-sm ${instrumentSans.className}`}>{description}</p>
       </div>
     </div>
   );
