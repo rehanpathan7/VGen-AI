@@ -48,7 +48,7 @@ export default function VGenFramework() {
         <div className="relative mt-10">
           {/* Vertical line */}
           <div className="absolute left-1/2 -top-8 -bottom-10 -translate-x-1/2 w-px 
-  bg-gradient-to-b 
+  bg-linear-to-b 
   from-transparent 
   via-[#7E43FF]/60 
   to-transparent" />

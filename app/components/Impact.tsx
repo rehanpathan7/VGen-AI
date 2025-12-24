@@ -54,7 +54,7 @@ const AccordianInfo = [
 
 function Impact() {
   return (
-    <div className="flex flex-col xl:mb-25 sm:px-10 lg:px-32">
+    <div className="flex flex-col xl:mb-25 sm:px-10 px-4 lg:px-32">
       {/* Header */}
       <div className={`flex px-4 flex-col items-center text-center mt-10 sm:mt-16 gap-4 ${funnelDisplay.className}`}>
         <h1 className="text-3xl sm:text-4xl lg:text-7xl font-semibold xl:leading-20">
@@ -64,7 +64,7 @@ function Impact() {
           See how we architect specific agents to solve critical business bottlenecks.
         </p>
       </div>
-
+      
       {/* Accordion */}
       <div className="">
         <Accordian items={AccordianInfo} />

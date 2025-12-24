@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect, ReactNode } from "react";
 import { Cpu, Layers, Bug, Brain, Plus, Bot, SquarePlus } from "lucide-react";
-import { funnelDisplay, instrumentSans } from "../fonts/font";
+import { funnelDisplay, instrumentSans, inter } from "../fonts/font";
 import { motion, AnimatePresence } from "framer-motion";
 
 // ------------------- Icon Wrapper -------------------
@@ -16,41 +16,7 @@ const IconWrapper: React.FC<IconWrapperProps> = ({ children }) => (
   </span>
 );
 
-const EnterpriseIcon = () => (
-  <IconWrapper>
-    <Bot className="w-full h-full" strokeWidth={1.5} />
-  </IconWrapper>
-);
 
-const StrategyIcon = () => (
-  <IconWrapper>
-    <Cpu className="w-full h-full" strokeWidth={1.5} />
-  </IconWrapper>
-);
-
-const GrowthIcon = () => (
-  <IconWrapper>
-    <Layers className="w-full h-full" strokeWidth={1.5} />
-  </IconWrapper>
-);
-
-const BugIcon = () => (
-  <IconWrapper>
-    <Bug className="w-full h-full size-2" strokeWidth={1.5} />
-  </IconWrapper>
-);
-
-const ThinkTankIcon = () => (
-  <IconWrapper>
-    <Brain className="w-full h-full" strokeWidth={1.5} />
-  </IconWrapper>
-);
-
-const PlusIcon = () => (
-  <IconWrapper>
-    <Plus className="w-full h-full" strokeWidth={1.5} />
-  </IconWrapper>
-);
 
 // ------------------- Feature Info -------------------
 interface Feature {
@@ -105,8 +71,8 @@ const featuresInfo: Feature[] = [
 // ------------------- Features Component -------------------
 export default function Features() {
   return (
-    <section className="w-full flex flex-col items-center justify-center px-4  text-center xl:pb-24 mb-5 xl:mb-20  lg:px-0">
-      <div className={`max-w-[100vw] lg:w-[85%] mx-auto flex flex-col gap-2 xl:gap-4`}>
+    <section className="w-full flex flex-col items-center justify-center px-4 text-center xl:pb-24 mb-10 xl:mb-20  xl:px-0">
+      <div className={`max-w-[100vw] xl:w-[85%] mx-auto flex flex-col gap-2 xl:gap-4`}>
         <h1 className={`text-2xl sm:text-5xl lg:text-7xl xl:leading-22 font-semibold ${funnelDisplay.className}`}>
           The <span className={`text-[#7E43FF] `}>Engine</span> Behind Your
           <span className={`block `}>Digital Workforce</span>
@@ -118,13 +84,14 @@ export default function Features() {
         </p>
       </div>
 
-      <div className="mt-0 sm:mt-20 xl:mt-30  mx-auto flex flex-col justify-center items-center gap-5 sm:gap-16 lg:gap-20 w-full max-w-full">
+      <div className="mt-7 sm:mt-20 xl:mt-30  flex flex-col justify-center items-center gap-10 md:gap-16 lg:gap-30 w-full max-w-full">
         {featuresInfo.map((feature, index) => (
-          <div key={index}  >
+          <div key={index} className="">
             {feature.direction === "right" ? (
-              <div className="flex flex-col lg:gap-0 xl:gap-10 max-w-full justify-center place-items-center lg:flex-row">
+              <div className="flex flex-col gap-5 lg:gap-0 xl:gap-10 max-w-full justify-center items-center md:flex-row">
+                
                 {/* TEXT */}
-                <div className="flex max-w-md  xl:ml-52 flex-col gap-2 font-extralight justify-center w-full text-left">
+                <div className="flex max-w-full xl:max-w-md  xl:ml-52 flex-col gap-2 font-extralight justify-center w-full text-left">
                   <h2 className={`text-xl sm:text-2xl lg:text-3xl font-semibold md:mb-3 ${funnelDisplay.className}`}>
                     {feature.title}
                   </h2>
@@ -134,23 +101,23 @@ export default function Features() {
                 </div>
 
                 {/* IMAGE */}
-                <div className="lg:w-full flex items-center justify-center">
+                <div className="xl:w-full flex items-center  bg-transparent justify-start xl:justify-center">
                   {index === 0 ? (
-                    <div className="lg:w-[85%] h-auto">
+                    <div className="w-full lg:w-[85%] h-auto">
                       <ImageDemo />
                     </div>
                   ) : feature.title === "Governance by Design" ? (
-                    <div className="relative w-full sm:w-[90%] aspect-700/420 overflow-hidden">
+                    <div className="relative w-full xl:w-[90%] aspect-700/420 xl:overflow-hidden">
                       <img
                         src={feature.icon}
                         alt={feature.title}
-                        className="w-full h-full object-contain rounded-2xl"
+                        className="w-full h-auto xl:h-full  object-contain rounded-2xl"
                       />
                       {feature.gif && (
                         <img
                           src={feature.gif}
                           alt=""
-                          className="absolute top-1/2 left-1/2 w-[21%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                          className="absolute top-1/2  scale-115 left-1/2 w-[21%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
                         />
                       )}
                     </div>
@@ -158,28 +125,29 @@ export default function Features() {
                     <img
                       src={feature.icon}
                       alt={feature.title}
-                      className="w-[85%] h-full object-contain"
+                      className="w-full xl:w-[85%] h-full object-contain"
                     />
                   )}
                 </div>
               </div>
             ) : (
-              <div className="xl:mt-8 w-full text-center flex flex-col lg:flex-row justify-center items-center  lg:gap-5 lg:-translate-x-5">
+              <div className="gap-5 w-full text-center flex flex-col md:flex-row justify-center  xl:items-center  xl:gap-5 lg:-translate-x-6">
+                
                 {/* IMAGE */}
-                <div className="w-full lg:w-full  xl:mr-10 flex flex-col items-center justify-center">
+                <div className="w-full xl:w-full xl:mr-10 flex flex-col items-center justify-center">
                   <img
                     src={feature.icon}
                     alt={feature.title}
-                    className="w-[85%] h-auto object-contain"
+                    className="w-full h-auto xl:w-[85%] xl:h-auto  object-contain"
                   />
                 </div>
-
+                
                 {/* TEXT */}  
-                <div className="flex flex-col max-w-xl px-4 xl:pr-36 justify-center w-full text-left ">
-                  <h2 className={`text-xl sm:text-2xl xl:text-3xl font-semibold xl:mb-4 ${funnelDisplay.className}`}>
+                <div className="flex flex-col max-w-xl xl:px-4 xl:pr-36 justify-center w-full text-left">
+                  <h2 className={`text-xl sm:text-2xl lg:text-3xl font-semibold mb-2 md:mb-4 ${funnelDisplay.className}`}>
                     {feature.title}
                   </h2>
-                  <p className={` text-[#161616] text-sm sm:text-lg xl:text-xl max-w-md font-extralight xl:leading-snug ${instrumentSans.className}`}>
+                  <p className={` text-[#161616] text-sm sm:text-lg lg:text-xl max-w-md font-extralight  xl:leading-snug ${instrumentSans.className}`}>
                     {feature.description}
                   </p>
                 </div>
@@ -236,19 +204,18 @@ export function ImageDemo() {
               z-30
               overflow-hidden
               text-[#564B6C]
-              text-[10px] sm:text-sm
+              text-[5px] sm:text-sm
             "
           >
-            <MenuItem  label="Enterprise Core" icon={<Bot className="size-4"/>} />
-            <MenuItem  label="StrategyPro" icon={<Cpu className="size-4"/>}/>
-            <MenuItem  label="Growth Sphere" icon={<Layers className="size-4"/>}/>
-            <MenuItem  label="BugFixCoder" icon={<Bug className="size-4"/>}/>
-            <MenuItem  label="ThinkTank AI" icon={<Brain className="size-4"/>}/>
+            <MenuItem  label="Enterprise Core" icon={<Bot className="size-3 md:size-4"/>} />
+            <MenuItem  label="StrategyPro" icon={<Cpu className="size-3 md:size-4"/>}/>
+            <MenuItem  label="Growth Sphere" icon={<Layers className="size-3 md:size-4"/>}/>
+            <MenuItem  label="BugFixCoder" icon={<Bug className="size-3 md:size-4"/>}/>
+            <MenuItem  label="ThinkTank AI" icon={<Brain className="size-3 md:size-4"/>}/>
 
-{/* , , , , Plus, , */}
             <div className="border-t border-[#f5f5f5] mx-2 my-1" />
 
-            <MenuItem  label="Create a new agent" icon={<SquarePlus className="size-4" />} />
+            <MenuItem  label="Create a new agent" icon={<SquarePlus className="size-3 md:size-4" />} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -256,7 +223,6 @@ export function ImageDemo() {
   );
 }
 
-/* ---------------- Menu Item ---------------- */
 
 function MenuItem({
    label,
@@ -266,7 +232,7 @@ function MenuItem({
   icon?: React.ReactNode;
 }) {
   return (
-    <div className="flex items-center gap-2 px-3 py-2 hover:bg-[#F6F1FF] cursor-pointer">
+    <div className="flex items-center gap-1 xl:gap-2 px-3 py-2 hover:bg-[#F6F1FF] cursor-pointer">
       {icon}
       <span className="text-[13px]"> {label}</span>
     </div>
